@@ -1,0 +1,119 @@
+.marime-navlogo{
+    font-size: 2rem;
+}
+.logo{
+border-radius:  30%;
+width:90px;
+height: 90px;
+}
+
+
+.button-wrapper{
+    margin-top: 20px;
+  }
+  
+  .button-wrapper .btn{
+    -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+  }
+  
+  .button-wrapper .items{
+    font-size: 16px;
+    background-color: red;
+      padding:0px 6px;
+      -webkit-border-radius: 9px;
+      -moz-border-radius: 9px;
+      border-radius: 9px;
+    }
+
+    .green-button{
+      color: green;
+
+    }
+    .item-picture{
+      width: 50px;
+    }
+    .item-name{
+      font-size: 12px;
+    }
+    .cart-item{
+        margin-top: 0px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        padding-left:10px;
+    }
+
+    .cart-item:hover{
+ background-color: #f3f3f3;
+      cursor: pointer;
+  }
+
+
+    .cart-parent:last-child .cart-item{
+      margin-bottom: 0px;
+    }
+    .dropdown-menu{
+      padding:0px;
+      width:15rem;
+    }
+    hr{
+      margin:0px;
+    }
+    .buy-btn{
+      width:85%;
+      margin-top:10px;
+      margin-bottom:10px; 
+    }
+    .display-span{
+      display:inline-table;
+    }
+    .toggle-padding{
+      padding-left: 4px;
+      padding-top: 9px;
+    }
+    .cart-icon{
+      display:inline-table;
+      position: absolute;
+      font-size:20px;
+    }
+    .cart-items{
+      display:inline-table;
+      padding: 0px 5px;
+      color:white;
+      font-weight:bold;
+      margin-top: -9px;
+      margin-left: 27px;
+      font-size:12px;
+      width:15px;
+      height:15px;
+      background-color: red;
+      border-radius:50%
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      right:4px;
+      left:auto;
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .item-name{
+      padding-left:10px;
+    }
+    .item-picture{
+      border-radius: 50%;
+    }

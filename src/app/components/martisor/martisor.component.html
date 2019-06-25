@@ -1,0 +1,11 @@
+<div class="card martisor-padding">
+    <img class="card-img-top image-width" [src]="Martisor.Picture" alt="Card image cap">
+    <div class="card-body">
+        <div><b>{{Martisor.Name}}</b></div>
+        <div>{{Martisor.Description}}</div>
+        <div>Price :{{Martisor.Price}}</div>
+        <div><button class="btn btn-primary"(click)="AddToCart($event)">Add to cart</button>
+            <button class="btn btn-light">Show details</button>
+        </div>
+    </div>
+</div>
