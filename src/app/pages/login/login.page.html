@@ -1,0 +1,26 @@
+<div class="row" id="outer">
+    <div class="col-md-3 element text-right">
+    </div>
+    <div class="col-md-3 element text-right">
+      <p class="h3 margin-left">Ecomm</p>
+      <img [src]="imageUrl">
+      <p class="h3 text-right">Welcome</p>
+    </div>
+    <div class="col-md-6 align-self-center  d-flex justify-content-between">
+      <form class="text-center  border-light p-5" loginForm="ngForm" (ngSubmit)="OnSubmit(loginForm.value)">
+        <p class="h1 mb-4t">
+          Login
+        </p>
+        <p class="h2">Don't have an acount?Create youre acount it take less then a minute.</p>
+        <p class="text-left">
+            <a (click)="ShowSection()" class="to_register">Create an acount</a>
+        </p>
+        <input type="text" id="userName" class="form-control mb-4 "   placeholder="Name">
+        <input type="password" id="password" class="form-control mb-4"  placeholder="Password">
+        <button class="btn  btn-block btn btn-primary" type="submit" >LOGIN</button>
+      </form>
+    </div>
+  </div>
+
+
+

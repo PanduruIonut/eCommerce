@@ -1,0 +1,21 @@
+  <div class="row" id="outer">
+    <div class="col s8 offset-s2">
+      <form class="col s12 white text-right" #imageForm="ngForm" (ngSubmit)="OnSubmit()">
+        <div class="row">
+          <div class="input-field col-md-3 ">
+          </div>
+          <div class="input-field col-md-3 ">
+            <app-image [(fileToUpload)]="fileToUpload"></app-image>
+          </div>
+          <div class="input-field col-md-6 ">
+            <app-forms #userComponent [user]="user"></app-forms>
+          </div>
+        </div>        
+        <div class="row">
+          <div class="input-field col s12">
+            <button type="submit" class="btn  btn-block btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

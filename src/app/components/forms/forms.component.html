@@ -1,0 +1,54 @@
+<form [formGroup]="Forms" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="input-field col s6 align-self-center ">
+      <p class="h1 mb-4t">
+        Sign-Up
+      </p>
+      <div class="form-group is-invalid">
+        <input type="text" formControlName="FirstName" id="FirstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }"
+          placeholder="First Name" />
+        <div class="invalid-feedback">
+          First Name is required
+        </div>
+      </div>
+      <div class="form-group is-invalid">
+        <input type="text" formControlName="LastName" id="LastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }"
+          placeholder="Last Name" />
+        <div class="invalid-feedback">
+          Last Name is required
+        </div>
+      </div>
+      <div class="form-group is-invalid">
+        <select formControlName="Gender" id="Gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Gender.errors }">
+          <option disabled selected value="">Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <div class="invalid-feedback">
+          Gender is required
+        </div>
+      </div>
+      <div class="form-group is-invalid">
+        <input type="email" formControlName="Email" id="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }"
+          placeholder="Email" />
+        <div class="invalid-feedback">
+          Email is required
+        </div>
+      </div>
+      <div class="form-group is-invalid">
+        <input type="text" formControlName="PhoneNumber" id="PhoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.PhoneNumber.errors }"
+          placeholder="Phone Number" />
+        <div class="invalid-feedback">
+          Phone Number is required
+        </div>
+      </div>
+      <div class="form-group is-invalid">
+        <input type="password" formControlName="Password" id="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }"
+          placeholder="Password" />
+        <div class="invalid-feedback">
+          Password
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
