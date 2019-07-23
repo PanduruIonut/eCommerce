@@ -1,22 +1,22 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormsComponent } from '../../components/forms/forms.component';
+import { SignUpFormComponent } from '../../components/sign-up-form/sign-up-form.component';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
-import { UploadImageService } from 'src/services/user.service';
+import { UserService } from 'src/services/user.service';
 
 @Component({
-  selector: 'app-sing-up',
-  templateUrl: './sing-up.page.html',
-  styleUrls: ['./sing-up.page.scss'],
-  providers: [UploadImageService]
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.page.html',
+  styleUrls: ['./sign-up.page.scss'],
+  providers: [UserService]
 })
-export class SingUpPage implements OnInit {
+export class SignUpPage implements OnInit {
   // tslint:disable-next-line:variable-name
-  constructor(private imageService: UploadImageService, private readonly _router: Router) {
+  constructor(private userService: UserService, private readonly _router: Router) {
     this.user = new User();
     this.user.Gender = '';
   }
-  @ViewChild('userComponent') userComponent: FormsComponent;
+  @ViewChild('signUpForm') signUpForm: SignUpFormComponent;
   public isVisible = false;
   imageUrl = '/assets/img/default-img.png';
   fileToUpload: File = null;
@@ -30,10 +30,10 @@ export class SingUpPage implements OnInit {
   ngOnInit() { }
 
   OnSubmit() {
-    const isValid = this.userComponent.IsValid();
+    const isValid = this.signUpForm.IsValid();
     if (isValid) {
-      this.user = this.userComponent.GetForm();
-      this.imageService
+      this.user = this.signUpForm.GetForm();
+      this.userService
         .SaveUser(this.user)
         .subscribe(data => {
           this.user.FirstName = null;

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { UploadImageService } from 'src/services/user.service';
+import { UserService } from 'src/services/user.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
@@ -8,19 +8,17 @@ import { User } from 'src/app/models/user.model';
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  providers: [UploadImageService]
+  providers: [UserService]
 })
 // tslint:disable-next-line:component-class-suffix
 export class LoginPage implements OnInit {
 
   imageUrl = '../../../assets/images/userlogin.png';
-  public isSectionVisible = false;
-  submitted = false;
   Forms: FormGroup;
   user: User;
 
 
-  constructor(private imageService: UploadImageService, private readonly _router: Router, private formBuilder: FormBuilder) {
+  constructor(private userService: UserService, private readonly _router: Router, private formBuilder: FormBuilder) {
     this.user = new User();
   }
   ngOnInit(): void {
@@ -38,15 +36,15 @@ export class LoginPage implements OnInit {
   onSubmit() {
     if (this.user.Email !== '' && this.user.Password !== '') {
 
-      this.imageService
+      this.userService
         .postLogin(this.user.Email, this.user.Password)
         .subscribe(data => {
-          this._router.navigate(['login']);
+          this._router.navigate(['products']);
         });
     }
   }
   ShowSection() {
-    this.isSectionVisible = true;
+    this._router.navigate(['sign-up']);
   }
 
 }

@@ -1,15 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 
 
 @Component({
   selector: 'app-forms',
-  templateUrl: './forms.component.html',
-  styleUrls: ['./forms.component.css']
+  templateUrl: './sign-up-form.component.html',
+  styleUrls: ['./sign-up-form.component.css']
 })
 
-export class FormsComponent implements OnInit {
+export class SignUpFormComponent implements OnInit {
   @Input() user: User;
   Forms: FormGroup;
 

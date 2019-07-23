@@ -7,15 +7,15 @@ import { Martisor } from 'src/app/models/martisor';
   styleUrls: ['./martisor.component.scss']
 })
 export class MartisorComponent implements OnInit {
-@Input() Martisor:Martisor;
-@Output()OnAddToCart: EventEmitter<number> = new EventEmitter<number>();
+  @Input() Martisor: Martisor;
+  @Output() OnAddToCart: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  AddToCart(){
+  AddToCart() {
     this.OnAddToCart.emit(this.Martisor.Id);
   }
 }

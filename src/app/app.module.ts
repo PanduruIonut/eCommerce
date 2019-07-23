@@ -8,9 +8,9 @@ import { MartisorComponent } from './components/martisor/martisor.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProductsPage } from './pages/products/products.page';
 import { LoginPage } from './pages/login/login.page';
-import { SingUpPage } from './pages/sing-up/sing-up.page';
+import { SignUpPage } from './pages/sign-up/sign-up.page';
 import { ImageComponent } from './components/image/image.component';
-import { FormsComponent } from './components/forms/forms.component';
+import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,9 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     ProductsPage,
     LoginPage,
-    SingUpPage,
+    SignUpPage,
     ImageComponent,
-    FormsComponent,
+    SignUpFormComponent,
   ],
   imports: [
     BrowserModule,
