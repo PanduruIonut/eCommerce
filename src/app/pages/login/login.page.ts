@@ -1,10 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { UploadImageService } from 'src/services/user.service';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { User } from 'src/app/models/user.model';
 
 @Component({
-    selector: 'app-login',
+  selector: 'app-login',
   templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss']
-//   providers: [UploadImageService]
+  styleUrls: ['./login.page.scss'],
+  providers: [UploadImageService]
 })
 // tslint:disable-next-line:component-class-suffix
 export class LoginPage implements OnInit {
@@ -12,26 +16,37 @@ export class LoginPage implements OnInit {
   imageUrl = '../../../assets/images/userlogin.png';
   public isSectionVisible = false;
   submitted = false;
+  Forms: FormGroup;
+  user: User;
 
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private imageService: UploadImageService, private readonly _router: Router, private formBuilder: FormBuilder) {
+    this.user = new User();
   }
+  ngOnInit(): void {
+    this.Forms = this.formBuilder.group({
+      Email: new FormControl(this.user.Email, [
+        Validators.required,
+      ]),
+      Password: new FormControl(this.user.Password, [
+        Validators.required
+      ]),
+    });
+  }
+  get f() { return this.Forms.controls; }
 
-//   OnSubmit(userName: any) {
-//     this.submitted = true;
+  onSubmit() {
+    if (this.user.Email !== '' && this.user.Password !== '') {
 
-//     // var passwoad= userName.controls['passwoad'].value; 
-
-
-//     // this.imageService
-//     //     .postLogin(userName)
-//     //     .subscribe(data => {
-//     //       this._router.navigate(['/home']);
-//     //     }); }
-// //   ShowSection() {
-// //     this.isSectionVisible = true;
-//   }
+      this.imageService
+        .postLogin(this.user.Email, this.user.Password)
+        .subscribe(data => {
+          this._router.navigate(['login']);
+        });
+    }
+  }
+  ShowSection() {
+    this.isSectionVisible = true;
+  }
 
 }

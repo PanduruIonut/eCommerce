@@ -33,18 +33,17 @@ export class SingUpPage implements OnInit {
     const isValid = this.userComponent.IsValid();
     if (isValid) {
       this.user = this.userComponent.GetForm();
-      const result = this.imageService.register(this.user);
-      //   this.imageService
-      //     .register(this.user)
-      //     .subscribe(data => {
-      //       this.user.FirstName = null;
-      //       this.user.LastName = null;
-      //       this.user.Gender = null;
-      //       this.user.DateOfBirth = null;
-      //       this.imageUrl = '/assets/img/default-img.png';
-      //       this._router.navigate(['login']);
-      //     });
-      // } else { console.log('Forms not complete'); }
-    }
+      this.imageService
+        .SaveUser(this.user)
+        .subscribe(data => {
+          this.user.FirstName = null;
+          this.user.LastName = null;
+          this.user.Gender = null;
+          this.user.Email = null;
+          this.user.PhoneNumber = null;
+          this.user.Password = null;
+          this._router.navigate(['login']);
+        });
+    } else { console.log('Forms not complete'); }
   }
 }
